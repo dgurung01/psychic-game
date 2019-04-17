@@ -8,11 +8,15 @@ var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l
 		 var winsNum = document.getElementById("Wins-num");
 		 var LossesNum = document.getElementById("Losses-num");
 		 var GuessesLeft = document.getElementById("Guesses-Left");
-		 var yourChoices = document.getElementById("your choices of letters so far");
+		 var yourChoices = document.getElementById("your-choices-of-letters-so-far");
 
 		 document.onkeyup = function(event) {
 
-		 	var userGuess = event.key;
+			console.log("hereee");
+
+			 var userGuess = event.key;
+			
+
 
 		 	var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
@@ -27,6 +31,12 @@ var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l
 					guessChoices = [];
 				}
 
+				else if (guessChoices.indexOf(userGuess) > -1){
+					return;
+
+				
+				
+				}
 
 
 				if (userGuess != computerGuess) {
@@ -43,10 +53,10 @@ var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l
 				
 			}
 
-			winsNum.textContent = + wins +;
-			LossesNum.textContent = "Losses: " + losses +;
-			GuessesLeft.textContent = "Guesses Left: " + numGuesses +;
-			yourChoices.textContent = "Your guesses so far: " + guessChoices.join(",") +;
+			winsNum.textContent =  "Wins: " + wins;
+			LossesNum.textContent = "Losses: " + losses ;
+			GuessesLeft.textContent = "Guesses Left: " + numGuesses ;
+			yourChoices.textContent = "your-choices-of-letters-so-far: " + guessChoices.join(" ") ;
 
 			
 			}
